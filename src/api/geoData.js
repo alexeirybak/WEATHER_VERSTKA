@@ -3,7 +3,7 @@ import { apiKey, baseUrl } from "./apiKeyAndHost.js";
 const searchForm = document.querySelector(".search-form");
 const cityInput = document.querySelector(".city-input");
 
-searchForm.addEventListener("sumbit", async (e) => {
+searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   getGeoData();
 });
@@ -33,7 +33,6 @@ export const getGeoData = async () => {
 
     console.log(lat, lon);
 
-    // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
   } catch (error) {
     console.error(error.message);
   }
