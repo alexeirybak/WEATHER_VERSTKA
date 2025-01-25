@@ -22,6 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  transition: all 1s ease;
 }
 
 main {
@@ -38,6 +39,7 @@ main {
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 20px;
+  transition: background-color 1s ease;
 }
 
 /* Дополнительные стили*/

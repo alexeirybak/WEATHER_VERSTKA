@@ -8,6 +8,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: var(--light-text-color);
+  transition: background-color 1s ease;
 }
 
 .weather-info {
@@ -84,6 +85,7 @@
   min-height: 135px;
   box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
   font-size: 0.8rem;
+  transition: background-color 1s ease;
 }
 
 .stat-item:last-child:nth-child(odd) {
@@ -162,6 +164,7 @@
   background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+  transition: background-color 1s ease;
 }
 
 .sun-info {
