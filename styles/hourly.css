@@ -28,6 +28,7 @@
     border-radius: 10px;
     min-width: 80px;
     box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+    transition: background-color 1s ease;
   }
   
   .hourly-item img {
@@ -56,11 +57,13 @@
   .hourly-scroll::-webkit-scrollbar-thumb {
     background-color: var(--background-color);
     border-radius: 4px;
+    transition: background-color 1s ease;
   }
   
   .hourly-scroll::-webkit-scrollbar-track {
     background-color: var(--scroll-color);
     border-radius: 4px;
+    transition: background-color 1s ease;
   }
   
   
