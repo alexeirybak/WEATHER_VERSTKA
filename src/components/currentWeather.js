@@ -20,8 +20,8 @@ const dayLength = document.querySelector(".day-length");
 
 export const renderCurrentWeather = (data, city) => {
   currentCity.textContent = city || "Неизвестно";
-  currentTemp.textContent = `${Math.round(data.main?.temp || 0)}°C`;
-  feelsLike.textContent = `${Math.round(data.main?.feels_like || 0)}°C`;
+  currentTemp.textContent = `${Math.round(data.main?.temp || 0)} °C`;
+  feelsLike.textContent = `${Math.round(data.main?.feels_like || 0)} °C`;
   currentDescription.textContent =
     data.weather?.[0]?.description || "Неизвестно";
   currentWeatherIcon.src = `https://openweathermap.org/img/wn/${
