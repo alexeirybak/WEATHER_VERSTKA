@@ -14,8 +14,10 @@ export const renderHourlyForecast = (data) => {
 
   const daysOfWeek = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
+  const timezoneOffset = data.city.timezone * 1000;
+
   data.list.forEach((item) => {
-    const date = new Date(item.dt * 1000);
+    const date = new Date(item.dt * 1000 + timezoneOffset);
     const hour = date.getHours();
     const temp = Math.round(item.main.temp);
     const icon = item.weather[0].icon;
