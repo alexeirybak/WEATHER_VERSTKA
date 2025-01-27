@@ -46,7 +46,7 @@ export const renderDailyForecast = (data) => {
         alt="Погода"
         />
         <div class="temp">
-        <p class="temp-day">${maxTemp}°C</p>
+        <p class="temp-day">${maxTemp} °C</p>
         <p class="temp-night">${minTemp}°C</p>
         `;
 
