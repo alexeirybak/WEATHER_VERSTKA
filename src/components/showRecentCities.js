@@ -1,3 +1,4 @@
+import { getGeoData } from "../api/geoData.js";
 import { cityInput } from "./inputForm.js";
 
 const recentCitiesList = document.getElementById("recent-cities-list");
@@ -21,6 +22,7 @@ export const showRecentCities = () => {
     li.addEventListener("click", () => {
       cityInput.value = city;
       recentCitiesList.style.display = "none";
+      getGeoData(city);
     });
     recentCitiesList.append(li);
   });

@@ -1,7 +1,13 @@
 const dailyForecast = document.querySelector(".forecast-list");
+import { showError } from "./error.js";
 
 export const renderDailyForecast = (data) => {
   dailyForecast.innerHTML = "";
+
+  if (!data) {
+    showError("Данные о погоде недоступны");
+  }
+
   const groupedData = groupDataByDay(data.list);
 
   Object.keys(groupedData)

@@ -1,7 +1,12 @@
 const hourlyForecast = document.querySelector(".hourly-scroll");
+import { showError } from "./error.js";
 
 export const renderHourlyForecast = (data) => {
   hourlyForecast.innerHTML = "";
+
+  if (!data) {
+    showError("Данные о погоде недоступны");
+  }
 
   const currentDate = new Date();
 
