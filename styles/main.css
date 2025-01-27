@@ -48,3 +48,17 @@ main {
   font-size: 1.2rem;
   margin-top: 5px;
 }
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px #ffa500);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #ffa500);
+  }
+}
+
+.sun-disk {
+  animation: glow 2s infinite;
+}
