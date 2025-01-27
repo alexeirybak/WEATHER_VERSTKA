@@ -48,7 +48,7 @@ export const renderHourlyForecast = (data) => {
           src="https://openweathermap.org/img/wn/${icon}@4x.png"
           alt="Погода"
         />
-        <p class="temp">${temp}°C</p>
+        <p class="temp">${temp} °C</p>
     `;
     hourlyForecast.append(hourlyItem);
   });
