@@ -1,4 +1,4 @@
-export const formatDate = (date) => {
+export const format-date = (date) => {
     const datePart = date.toLocaleDateString("ru", {
         weekday: "short",
         day: "numeric",
