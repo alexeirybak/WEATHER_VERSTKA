@@ -7,11 +7,11 @@ import { scrollToTop } from "./src/components/scrollToTop.js";
 import { getCurrentYear } from "./src/components/currentYear.js";
 
 export function initApp() {
-  switchTheme();
-  getGeoData();
-  getWeatherByForm();
-  renderCurrentTime();
-  geoLocation();
-  scrollToTop();
-  getCurrentYear();
+    switchTheme();
+    getGeoData();
+    getWeatherByForm();
+    renderCurrentTime();
+    geoLocation();
+    scrollToTop();
+    getCurrentYear();
 }

@@ -1,5 +1,5 @@
 export const updateHumidityScale = (humidity) => {
-  const parameter = document.querySelector(".parameter");
+    const parameter = document.querySelector(".parameter");
 
-  parameter.style.width = `${humidity}%`;
+    parameter.style.width = `${humidity}%`;
 };

@@ -1,15 +1,15 @@
 export const replaceAbbreviation = (city) => {
-  const lowerCaseCity = city.toLowerCase();
+    const lowerCaseCity = city.toLowerCase();
 
-  if (cityAbbreviations[lowerCaseCity]) {
-    return cityAbbreviations[lowerCaseCity];
-  }
+    if (cityAbbreviations[lowerCaseCity]) {
+        return cityAbbreviations[lowerCaseCity];
+    }
 
-  return city;
+    return city;
 };
 
 const cityAbbreviations = {
-  мск: "Москва",
-  спб: "Санкт-Петербург",
-  нск: "Новосибирск",
+    мск: "Москва",
+    спб: "Санкт-Петербург",
+    нск: "Новосибирск",
 };

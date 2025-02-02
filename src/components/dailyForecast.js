@@ -2,43 +2,43 @@ const dailyForecast = document.querySelector(".forecast-list");
 import { showError } from "./error.js";
 
 export const renderDailyForecast = (data) => {
-  dailyForecast.innerHTML = "";
+    dailyForecast.innerHTML = "";
 
-  if (!data) {
-    showError("Данные о погоде недоступны");
-  }
+    if (!data) {
+        showError("Данные о погоде недоступны");
+    }
 
-  const groupedData = groupDataByDay(data.list);
+    const groupedData = groupDataByDay(data.list);
 
-  Object.keys(groupedData)
-    .slice(0, 5)
-    .forEach((dayKey) => {
-      const dayData = groupedData[dayKey];
-      const maxTemp = Math.round(
-        Math.max(...dayData.map((item) => item.main.temp_max))
-      );
+    Object.keys(groupedData)
+        .slice(0, 5)
+        .forEach((dayKey) => {
+            const dayData = groupedData[dayKey];
+            const maxTemp = Math.round(
+                Math.max(...dayData.map((item) => item.main.temp_max)),
+            );
 
-      const minTemp = Math.round(
-        Math.min(...dayData.map((item) => item.main.temp_min))
-      );
+            const minTemp = Math.round(
+                Math.min(...dayData.map((item) => item.main.temp_min)),
+            );
 
-      const icon = dayData[0].weather[0].icon;
+            const icon = dayData[0].weather[0].icon;
 
-      const date = new Date(dayData[0].dt * 1000);
+            const date = new Date(dayData[0].dt * 1000);
 
-      const dayName = date.toLocaleDateString("ru-RU", {
-        weekday: "short",
-      });
+            const dayName = date.toLocaleDateString("ru-RU", {
+                weekday: "short",
+            });
 
-      const dayNumber = date.getDate();
+            const dayNumber = date.getDate();
 
-      const monthName = date.toLocaleDateString("ru-RU", {
-        month: "short",
-      });
+            const monthName = date.toLocaleDateString("ru-RU", {
+                month: "short",
+            });
 
-      const forecastItem = document.createElement("div");
-      forecastItem.classList.add("forecast-item");
-      forecastItem.innerHTML = `
+            const forecastItem = document.createElement("div");
+            forecastItem.classList.add("forecast-item");
+            forecastItem.innerHTML = `
         <p class="day">${dayName},</p>
         <p class="day">${dayNumber} ${monthName}</p>
         <img
@@ -50,23 +50,23 @@ export const renderDailyForecast = (data) => {
         <p class="temp-night">${minTemp} °C</p>
         `;
 
-      dailyForecast.append(forecastItem);
-    });
+            dailyForecast.append(forecastItem);
+        });
 };
 
 const groupDataByDay = (list) => {
-  const groupedData = {};
+    const groupedData = {};
 
-  list.forEach((item) => {
-    const date = new Date(item.dt * 1000);
-    const dayKey = date.toLocaleDateString("ru-RU");
+    list.forEach((item) => {
+        const date = new Date(item.dt * 1000);
+        const dayKey = date.toLocaleDateString("ru-RU");
 
-    if (!groupedData[dayKey]) {
-      groupedData[dayKey] = [];
-    }
+        if (!groupedData[dayKey]) {
+            groupedData[dayKey] = [];
+        }
 
-    groupedData[dayKey].push(item);
-  });
+        groupedData[dayKey].push(item);
+    });
 
-  return groupedData;
+    return groupedData;
 };
