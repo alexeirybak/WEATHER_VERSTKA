@@ -29,4 +29,3 @@ export const getWeather = async (lat, lon) => {
 export const getForecast = async (lat, lon) => {
   return fetchData("forecast", lat, lon);
 };
-

@@ -14,7 +14,7 @@ export function geoLocation() {
     } catch (error) {
       console.error("Ошибка при получении геолокации: ", error.message);
       showError(
-        "Не удалось определить Ваше местоположение. Пожалуйста, введите город вручную"
+        "Не удалось определить Ваше местоположение. Пожалуйста, введите город вручную",
       );
     }
   });
@@ -32,7 +32,7 @@ const getBrowserGeolocation = () => {
         },
         (error) => {
           reject(error);
-        }
+        },
       );
     }
   });
@@ -55,7 +55,9 @@ const geoLocationName = async (latitude, longitude) => {
     const data = await response.json();
 
     if (data && data.length > 0) {
+      // eslint-disable-next-line camelcase
       const { local_names } = data[0];
+      // eslint-disable-next-line camelcase
       const russianName = local_names?.ru || data[0].name;
       return `${russianName}`;
     } else {
@@ -78,7 +80,7 @@ const fetchWeatherByCoords = async (latitude, longitude, locationName) => {
   } catch (error) {
     console.error(error.message);
     showError(
-      "Не удалось получить данные о погоде. Пожалуйста, попробуйте позже"
+      "Не удалось получить данные о погоде. Пожалуйста, попробуйте позже",
     );
   }
 };
