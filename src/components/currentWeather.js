@@ -36,7 +36,7 @@ export const renderCurrentWeather = (data, city) => {
   }
   currentHumidity.textContent = `${data.main?.humidity || 0}%`;
   currentPressure.textContent = `${Math.round(
-    (data.main?.pressure || 0) * 0.750062
+    (data.main?.pressure || 0) * 0.750062,
   )} мм рт.ст.`;
 
   const windDegrees = data.wind?.deg || 0;
